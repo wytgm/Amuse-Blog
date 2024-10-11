@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-full object-cover " style="height:100%">
+  <div class="card w-full object-cover " style="height:100%; box-shadow: 10px 5px 0px 3px #6BC2E7;">
     <div id="player"></div>
   </div>
 </template>
@@ -39,31 +39,31 @@ export default {
   left: 50%;
   transform: translate(-50%,-50%);
 }
+/* bg-[#6BC2E7] */
 .aplayer {
   @apply 
   flex 
   flex-col 
   w-full 
-  h-2/3
+  h-full
   center
   absolute
   object-cover
   space-y-4
-  bg-rose-400;
+  rounded-xl;
   font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
-  width: 100%;
-  height: 100%;
+ 
 }
 .aplayer .aplayer-body {
-  @apply space-y-4;
-    margin-top: 10px ;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
+  @apply space-y-6;
+  margin-top: 10px ;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .aplayer .aplayer-list.aplayer-list-hide {
     max-height: 0 !important;
@@ -74,32 +74,36 @@ export default {
     display: block;
 }
 .aplayer .aplayer-list {
-  @apply z-30 card p-6 absolute left-0 bottom-0 w-full h-full bg-sky-600 ;
-    object-fit: cover;
-    width: 60%;
-    height: 100%;
-    overflow: auto;
-    transition: all .25s ease;
-    will-change: height;
-    display: none;
-    overflow: hidden;
+  @apply z-30 card p-6 absolute left-0 bottom-0 w-full h-full bg-yellow-200 ;
+  object-fit: cover;
+  width: 60%;
+  height: 100%;
+  overflow: auto;
+  transition: all .25s ease;
+  will-change: height;
+  display: none;
+  overflow: hidden;
+}
+.card{
+  border: 0px;
+  box-shadow: -10px -5px 0px 5px #6BC2E7;
 }
 
 /* 封面 */
 .aplayer.aplayer-withlrc .aplayer-pic {
     height: 180px;
-    width: 148px;
+    width: 180px;
     border-radius: 50%;
 }
 .aplayer .aplayer-pic {
-    @apply w-12 relative top-0;
-    border-radius: 50%;
-    position: relative;
-    float: none;
-    background-size: cover;
-    background-position: 50%;
-    transition: all .3s ease;
-    cursor: pointer;
+  @apply w-12 relative top-0;
+  border-radius: 50%;
+  position: relative;
+  float: none;
+  background-size: cover;
+  background-position: 50%;
+  transition: all .3s ease;
+  cursor: pointer;
 }
 /* 播放按钮 */
 .aplayer .aplayer-pic .aplayer-play {
@@ -149,14 +153,14 @@ export default {
     text-align: center;
     overflow: hidden;
     margin: -10px 0 7px;
-    font-size: 20px;
+    
 }
 /* 控制器 */
 .aplayer .aplayer-info .aplayer-controller {
-    position: absolute;
-    bottom: 45px;
-    right: -75px;
-    width: 165%;
+  position: relative;
+  bottom: -20px;
+  right: 60px;
+  width: 150%;
 }
 /* 控制器图标 */
 .aplayer .aplayer-info .aplayer-controller .aplayer-time {

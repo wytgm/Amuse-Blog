@@ -5,7 +5,7 @@
   <div class="container mx-auto">
     <div class="bg1"></div>
     <div class="bg2">
-    <div id="staril" class="grid grid-cols-3 p-4 gap-2">
+    <div id="staril" class="grid grid-cols-3 p-3 gap-6">
      <!-- 卡片 -->
      <div class="card"  v-for="(gacha, index) in gachas" :key="index">
       <div class="version" ></div>
@@ -32,9 +32,9 @@
     </div>
      <!-- 卡片按钮弹窗：对话框列表 -->
      <dialog id="myModal" class="modal">
-      <div class="modal-box" v-if="currentGacha" style="overflow: auto;">
+      <div class="modal-box w-10/12" v-if="currentGacha" style="overflow: auto;">
         <h3 class="modaltext">{{ currentGacha.people }} 卡池记录!</h3>
-        <div style="margin-top: 3%;"><p>{{ currentGacha.content }}</p></div>
+        <div style="margin-top: 3%;" class="font">{{ currentGacha.content }}</div>
         <div style="margin-top: 2%;scale: 0.95;">
           <template v-if="currentGacha.video">
           <video autoplay muted controls loop>
@@ -117,9 +117,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
-}
 .center{
 top: 50%;
 left: 50%;
@@ -133,47 +130,43 @@ transform: translate(-50%,-50%);
   border-color: black;  
 }
 .bg2{
-  @apply w-8/12 h-[650px] center absolute;
+  @apply w-9/12 h-[650px] center absolute;
   background: repeating-linear-gradient(80deg,#ad28ff 0 2px,#c362ff 3px 4px,#a31df7 5px);
   border-radius: 25px;
-  border-width: 10px;
+  border-width: 5px;
   border-color: black;
   overflow: auto;
 }
-
-/* .gridcus{
-  margin-top: 38px; 
-  gap: 10px;
-  margin-left: 23px;
-  margin-right: 0px;
-  overflow-x: hidden;
-} */
 .card {
   @apply center;
   position: relative;
-  width: 340px;
-  height: 285px;
-  /* background: #202020; */
-  border-radius: 20px;
+  width: 385px;
+  height: 295px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
-  background-color: #202020;
+  box-shadow: 0px 10px 5px 5px rgba(14, 28, 69, 0.5);
+  background-color: #272627;
   background-image:repeating-linear-gradient(45deg,
   hsla(0,0%,100%,.1),
   hsla(0,0%,100%,.1) 15px,
   transparent 0,
   transparent 30px);
+  font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
+}
+.font{
+  font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
+  text-align: center;
 }
 .imgcard{
   z-index: 3;
-  width: 310px;height: 200px;
-  background: repeating-linear-gradient(120deg,#ff28f1 0 2px,#ff62e0 3px 4px,#ff28f1 5px);
-  border-radius: 35px;
+  width: 355px;height: 200px;
+  background: #a31df7;
+  border-radius: 30px;
   position: absolute;
   left: 15px;top: -20px;
   overflow: hidden;
-  border-width: 5px;
-  border-color: rgb(250, 194, 62);
+  border-width: 3px;
+  border-color: black;
 }
 .imgcus{
   object-fit: cover;
@@ -208,6 +201,7 @@ transform: translate(-50%,-50%);
   line-height: 1.75rem ;
   font-weight: 900;
   margin-top: 3%;
+  font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
 }
 .rect1{
   z-index: 2;

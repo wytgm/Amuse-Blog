@@ -1,25 +1,8 @@
 <template>
   <div>
-  <div class="z-10 w-full h-full border-rose-800 absolute top-0 pointer-events-none" style="border-width: 45px;">
-    <svg id="StripeTop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="90%" height="90%" x="0" y="0" class="z-20" style="scale: 1.13;">
-      <polygon id="StripeTop01" class="BK-6" points="1268.87 66 1236.87 66 1267.87 3 1298.87 3 1268.87 66"/>
-      <polygon id="StripeTop02" class="BK-6" points="1324.15 66 1292.15 66 1323.15 3 1354.15 3 1324.15 66"/>
-      <polygon id="StripeTop03" class="BK-6" points="1385.15 66 1353.15 66 1384.15 3 1415.15 3 1385.15 66"/>
-      <polygon id="StripeTop04" class="BK-6" points="1445.19 66 1413.19 66 1444.19 3 1475.19 3 1445.19 66"/>
-      <polygon id="StripeTop05" class="BK-6" points="1511.23 66 1479.23 66 1510.23 3 1541.23 3 1511.23 66"/>
-      <polygon id="StripeTop06" class="BK-6" points="1578.23 66 1546.23 66 1577.23 3 1608.23 3 1578.23 66"/>
-    </svg>
-   
-    <svg id="StripeBottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1083" width="90%" height="90%" x="0" y="0" class="z-20 absolute -bottom-1 -left-5" style="scale: 1.1;transform: translateX(-145px);">
-      <polygon id="StripeBottom1" class="BK-6" points="530.87 1083 498.87 1083 529.87 1020 560.87 1020 530.87 1083"/>
-      <polygon id="StripeBottom2" class="BK-6" points="586.15 1083 554.15 1083 585.15 1020 616.15 1020 586.15 1083"/>
-      <polygon id="StripeBottom3" class="BK-6" points="647.15 1083 615.15 1083 646.15 1020 677.15 1020 647.15 1083"/>
-      <polygon id="StripeBottom4" class="BK-6" points="707.19 1083 675.19 1083 706.19 1020 737.19 1020 707.19 1083"/>
-      <polygon id="StripeBottom5" class="BK-6" points="773.23 1083 741.23 1083 772.23 1020 803.23 1020 773.23 1083"/>
-      <polygon id="StripeBottom6" class="BK-6" points="840.23 1083 808.23 1083 839.23 1020 870.23 1020 840.23 1083"/>
-    </svg>
+  <div class="z-10 w-full h-full border-rose-800 absolute top-0 pointer-events-none" style="border-width: 20px;">
   </div>
-  <div class="dropdown dropdown-left z-30 absolute right-0 top-0">
+  <div class="dropdown lg:dropdown-left lg:scale-105 sm:dropdown-bottom sm:scale-[0.85] z-30 absolute right-0 top-0">
   <div tabindex="0" role="button" class="btn btn-ghost hover:btn-ghost" style="background-color: rgba(155, 155, 155, 0);">
     <div id="circleB1" class="circleB">
       <div id="circleT1" class="circleT" style="">
@@ -99,7 +82,7 @@ export default {
 
 };
 </script>
-<style>
+<style scoped>
 .circleT{
   @apply z-30 rounded-full;
   height: 100px;
@@ -127,15 +110,16 @@ export default {
 
 }
 .avacard{
+  @apply 
+  lg:h-[666px]
+  sm:h-[580px]
+  absolute
+  sm:right-10;
   font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
-  height: 666px;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 66px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
-  position: absolute;
-  top: -50%;
-  right: 0%;
   border: 10px solid black;
   --c: #81c916;
 	background: repeating-linear-gradient(45deg,var(--c),

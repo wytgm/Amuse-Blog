@@ -1,6 +1,6 @@
 <template>
   
-  <div class="carousel w-full h-full relative object-cover">
+  <div class="carousel w-full h-full relative object-cover rounded-md">
     <div
       v-for="(slide, index) in slides"
       :key="index"
@@ -9,7 +9,7 @@
     
     >
     <NuxtLink to="/MeituCollect" class="w-full">
-      <img class="relative w-full h-full object-cover rounded-[25px] border-8" :src="slide.src" />
+      <img class="relative w-full h-full object-cover" :src="slide.src" />
     </NuxtLink>
      
  
@@ -77,9 +77,7 @@ export default {
   border-radius: 15px;
   border-width: 5px;
   border-color: black;
-  box-shadow: 0px 0px 0px 3px rgb(255, 255, 255,0.8);  
-
-  background-color: blue;
+  /* box-shadow: 0px 0px 0px 0px rgb(255, 255, 255,0.8);   */
   overflow: hidden;
 }
 .imgcus{

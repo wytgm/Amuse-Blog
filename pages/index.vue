@@ -1,10 +1,20 @@
 <template>
-  <div class="overflow-hidden">   
+  <div class="overflow-hidden " >   
+    <div class="w-full z-30 h-9 bg-yellow-200 absolute top-0 left-0 overflow-hidden flex">
+      <h1 id="title" class="w-full p-2 text-xl">ceshiwenbenc  eshiwenbenceshi  wenbenceshiwe  
+        nbenceshiwenben ceshiwenbenc  nbenceshiwenben ceshiwenbenc nbenceshiwenben  nc nbenceshiwenben n
+      </h1>
+    </div>
+    <div class="w-full z-30 h-9 bg-yellow-200 absolute bottom-0 right-0 overflow-hidden flex">
+      <h1  id="title" class="p-2 text-xl">ceshiwenbenc  eshiwenbenceshi  wenbenceshiwe  
+        nbenceshiwenben ceshiwenbenc  nbenceshiwenben ceshiwenbenc nbenceshiwenben 
+      </h1>
+    </div>
     <tophome/>
-    <div class="-z-1 center  w-full h-full overflow-hidden">
-      <video class="center scale-125" muted autoplay loop>
+    <div class="-z-1 center  w-full h-full overflow-hidden absolute bg-rose-500">
+      <!-- <video class="center scale-125" muted autoplay loop>
         <source src="/BG.mp4" type="video/mp4">
-      </video>
+      </video> -->
     </div>  
 <!-- 开场动画 -->
   <div class="z-30 w-full h-full absolute top-0 left-0 overflow-hidden pointer-events-none">
@@ -74,16 +84,16 @@
     <img src="https://mfiles.alphacoders.com/101/1013086.png" alt=""> 
   </div>
 
-  <div id="center">
+  <!-- <div id="center">
     <div id="circleB" class="circleB"></div>
     <div id="circleT" class="circleT" style="">
       <img  class=" w-full h-full object-cover relative" src="http://cdn.sonderwyt.top/Cover/avatar/02.webp" alt="">
     </div>
-  </div>
+  </div> -->
   </div>
 
-  <div class="flex flex-row w-10/12 h-[700px] center space-x-4">
-    <div id="test" class="flex w-[650px] h-full bg-sky-500 border-8 border-black rounded-lg overflow-hidden">
+  <div class="flex flex-row w-11/12 h-[700px] absolute center space-x-2 " >
+    <div id="test" class="flex w-[450px] h-full rounded-lg ">
       <Music/>
     </div>
     <div class="flex w-full h-full">
@@ -107,12 +117,14 @@ export default {
     onMounted(() => {
       gsap.to(["#left","#pinkG"], { 
         x:-900,
+        delay:1.2,
         duration: 1.2,
         ease:"sine.inOut",
         stagger: 1
       })
       gsap.to(["#right"], { 
         x:900,
+        delay:1.2,
         duration: 1.2,
         ease:"sine.inOut",
         stagger: 0.5
@@ -131,7 +143,7 @@ export default {
         y:-350,
         scale:0.25,
         duration: 0.8,
-        delay:0.3,
+        delay:1.5,
         opacity:0,
 
         ease:"sine.inOut",
@@ -149,7 +161,6 @@ export default {
 
 <style scoped>
 .center{
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -158,18 +169,19 @@ export default {
 .container {
   font-family:'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
   font-size:x-large;
+  
 }
 .Left {
-    @apply h-full w-1/2 absolute top-0 left-0;
-    --c: #6600ff;
-    background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 0.6%),
-                repeating-linear-gradient(-30deg,var(--c), #000000, var(--c) 0.6%),
-                linear-gradient(180deg,#0e0e0e,var(--c));
-    background-blend-mode: color-dodge;
-    filter: contrast(5);
-    /* mix-blend-mode: soft-light; */
-    border: 10px solid black;
-  }
+  @apply h-full w-1/2 absolute top-0 left-0;
+  --c: #6600ff;
+  background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 0.6%),
+              repeating-linear-gradient(-30deg,var(--c), #000000, var(--c) 0.6%),
+              linear-gradient(180deg,#0e0e0e,var(--c));
+  background-blend-mode: color-dodge;
+  filter: contrast(5);
+  /* mix-blend-mode: soft-light; */
+  border: 10px solid black;
+}
 .Left img{
   @apply absolute top-0 left-0 w-full h-full object-cover
   opacity-40
@@ -229,23 +241,9 @@ export default {
 
 
 .bg{
-  @apply w-full h-full;
-  --c: #d08926;
-  background: repeating-linear-gradient(45deg,var(--c),#8887872c,var(--c) 0.5%),
-              repeating-linear-gradient(-30deg,var(--c), #000, var(--c) 0.5%),
-              linear-gradient(0deg,#060606db,var(--c));
-  background-blend-mode: color-dodge;
-  filter: contrast(1.5);
-  border-top-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-  border-color: #000;
-  border-width: 8px;
-}
-#center{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  /* background: #6BC2E7; */
+  @apply w-full h-full rounded-2xl;
+  color: white;
 }
 .am-1 {
   stroke: #000;
@@ -290,9 +288,9 @@ export default {
 
 /* 手机端  */
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
 #test {
-  display: none; /* 隐藏左侧的 #test 模块 */
+  display: none; /* 隐藏左侧的 #test 音乐模块 */
 }
 
 .flex.flex-row {
@@ -332,7 +330,7 @@ export default {
 
 }
 .Left {
-  @apply bg-red-500 w-full h-1/2;
+  @apply bg-red-500 absolute top-0 left-0 w-full h-1/2;  
   --c: #ff7300;
   background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 1%),
               repeating-linear-gradient(-30deg,var(--c), #000000, var(--c) 1%),
@@ -341,17 +339,18 @@ export default {
   filter: contrast(5);
   border: 10px solid black;
 }
-.Right{
-  @apply bg-yellow-300 w-full h-1/2 absolute bottom-0;
-  --c: #00a2ff;
-  background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 1%),
-              repeating-linear-gradient(-30deg,var(--c), #000000, var(--c) 1%),
-              linear-gradient(90deg,#1f1f1f,var(--c));
+.right-open{
+  @apply absolute right-0 bottom-0 bg-yellow-300 w-full h-1/2 ;
+  --c: #ff9500;
+  background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 0.6%),
+              repeating-linear-gradient(-30deg,var(--c), #000000, var(--c) 0.6%),
+              linear-gradient(0deg,#1f1f1f,var(--c));
   background-blend-mode: color-dodge;
   filter: contrast(5);
   /* mix-blend-mode: soft-light; */
   border: 10px solid black;
-}
+} 
+
   
 
 

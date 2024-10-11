@@ -162,15 +162,13 @@
               linear-gradient(0deg,#060606db,var(--c));
   background-blend-mode: color-dodge;
   filter: contrast(1);
-  border: 5px solid black;
+  border: 3px solid black;
   border-top-left-radius: 32px;
-}
-.leftchat-bg{
-
 }
 .bg1{
   /* background-color: rgb(54, 255, 74); */
-  --c: rgb(2, 255, 107);
+  @apply w-11/12 h-[715px];
+  --c: rgb(255, 0, 106);
   background: repeating-linear-gradient(90deg,var(--c),#8887872c,var(--c) 0.5%),
               repeating-linear-gradient(-30deg,var(--c), #000, var(--c) 0.5%),
               linear-gradient(180deg,#060606db,var(--c));
@@ -178,7 +176,7 @@
   filter: contrast(1.1);
   /* mix-blend-mode: soft-light; */
   border-radius: 25px;
-  border-width: 10px;
+  border-width: 3px;
   border-color: black;  
 }
 

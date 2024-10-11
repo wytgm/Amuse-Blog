@@ -1,21 +1,22 @@
 <template>
-  <div >
+  <div>
     <topcollect/>
-
+    <div class="-z-1 absolute w-full h-full bg-[#112E4F]"></div>
+    
     <div class="whole">
     <div class="bottomrectM">
       <div class="gridcusM">
-            <div class="movie-card flex flex-row" v-for="(animation, index) in movies" :key="index">
+            <div class="movie-card flex flex-row" v-for="(movie, index) in movies" :key="index">
               <div class="flex w-1/2 h-full relative">
                 <div>
-                  <img class="movie-img" v-lazy="animation.poster" :alt="animation.title" />
+                  <img class="movie-img" v-lazy="movie.poster" :alt="movie.title" />
                 </div>
               </div>
               <div class="flex flex-col w-1/2 h-full relative items-center justify-center space-y-6 p-3">
-                <span class="movie-title">{{ animation.title }}</span>
+                <span class="movie-title">{{ movie.title }}</span>
                 <!-- <div class="movie-rating">
-                  <input class="mask mask-star-2 movie-star"  v-for="n in Math.floor(animation.rating)" :key="n" />
-                  <input class="mask mask-star-2 movie-star1" v-for="n in 5 - Math.floor(animation.rating)" :key="n" />
+                  <input class="mask mask-star-2 movie-star"  v-for="n in Math.floor(movie.rating)" :key="n" />
+                  <input class="mask mask-star-2 movie-star1" v-for="n in 5 - Math.floor(movie.rating)" :key="n" />
                 </div> -->
                 <button class="btn movie-button underline decoration-wavy" @click="openModal(index)">观影感受</button>
               </div>
@@ -29,13 +30,13 @@
         <h3 class="modaltext mt-2">{{ currentMovie.title }} 观影感受!</h3>
         <div class="flex flex-row p-4 mt-2">
           <span class="flex w-1/2 rounded-lg overflow-hidden">
-            <img v-lazy="animation.poster" :alt="animation.title">
+            <img v-lazy="currentMovie.poster" :alt="currentMovie.title">
           </span>
           <div class="flex flex-col w-1/2 ml-4 space-y-4 ">
             <div class="rating">
               <span style="font-weight: 900;">个人评分：</span>
-              <input class="mask mask-star-2 star"  v-for="n in Math.floor(currentMovie.rating)" :key="n" />
-              <input class="mask mask-star-2 star1" v-for="n in 5 - Math.floor(currentMovie.rating)" :key="n" />
+              <input class="mask mask-star-2 movie-star"  v-for="n in Math.floor(currentMovie.rating)" :key="n" />
+              <input class="mask mask-star-2 movie-star1" v-for="n in 5 - Math.floor(currentMovie.rating)" :key="n" />
             </div>
             <div><span style="font-weight: 900;">观影时间：</span>{{ currentMovie.watchtime}}</div>
             <p>{{ currentMovie.info }}</p>
@@ -58,7 +59,7 @@ import { onMounted } from 'vue';
 import movies from '~/assets/json/movie.json';
 
 export default {
-  name: "Animation",
+  name: "movie",
   data() {
     return {
       movies: movies,
@@ -104,21 +105,26 @@ export default {
   container 
   mx-auto 
   w-full h-full  
-  center;
+  center
+  absolute
+  ;
+  
   /* overflow-hidden; */
   font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
 }
 .bottomrectM{
   z-index: 2;
   @apply 
+  absolute
   w-full 
   relative 
   center 
-  p-3
+  p-2
   overflow-scroll 
-  overflow-x-hidden;
+  overflow-x-hidden
+ ;
   height: 700px;
-  background-color: #1e02f0;
+  /* background-color: #1e02f0; */
 }
 
 .gridcusM{

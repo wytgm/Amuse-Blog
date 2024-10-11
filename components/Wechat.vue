@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <div class="card-bg bg-fuchsia-950">
+    <div class="card-bg">
       <div class="flex flex-row w-full h-full relative top-0 left-0">
         <div class="flex w-36 h-full items-center justify-center">
           <div class="ava">
@@ -9,11 +9,11 @@
         </div>
         <div class="flex flex-col w-full h-full space-y-5 items-center justify-center">
           <div class="title">
-            <h1 style="font-size: xx-large;color: white; ">卡芙卡</h1>
-            <p style="font-size: medium;color:white;">邀请您通话......</p>
+            <h1>卡芙卡</h1>
+            <p>邀请您通话......</p>
           </div>
           <audio ref="audioPlayer"></audio>
-          <div class="flex flex-row space-x-6 relative">
+          <div class="flex flex-row space-x-28">
             <div class="flex w-full h-full" >
               <button id="red" class="btn btn- btn-circle bg-red-500 center"  @click="playRandomAudio">
                 <svg class="w-full h-full object-cover overflow-hidden scale-75 relative -left-1"  xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 22 22">
@@ -181,19 +181,9 @@ export default {
   height:235px;
   position: relative;
   top:0;left: 0;
- 
-  /* --c: #99ff00;
-	background: repeating-linear-gradient(45deg,var(--c),#000,var(--c) 1.5%),
-	            repeating-linear-gradient(-30deg,var(--c), #000, var(--c) 1.5%),
-	            linear-gradient(200deg,#000000,var(--c));
-	background-blend-mode: color-dodge;
-	mix-blend-mode: soft-light; */
-
-  border: 5px solid #000;
+  border: 3px solid #000;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0px 0px 0px 3px rgb(255, 255, 255,0.8);  
-
   font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
 }
 

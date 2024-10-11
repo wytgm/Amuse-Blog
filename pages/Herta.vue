@@ -131,12 +131,14 @@
         </div>
       </div>
     </div>
+
+
     <!-- 模态框 -->
     <dialog id="myModal" class="modal">
       <div class="modal-box w-8/12 max-w-6xl">
-        <div class="flex w-full h-full border-10 border-double rounded-lg items-center justify-center space-x-2">
+        <div class="flex w-full h-full border-10 border-double rounded-lg items-center justify-center space-x-0">
           <!-- 图片部分 -->
-          <div class="w-[600px] h-[550px] overflow-hidden rounded-xl" v-if="selectedHerta && selectedHerta.images">
+          <div class="w-[800px] h-[550px] overflow-hidden rounded-xl" v-if="selectedHerta && selectedHerta.images">
             <div class="carousel carousel-vertical w-full h-full object-cover" >
               <div  class="carousel-item h-full object-cover" v-for="(image, index) in selectedHerta.images" :key="index">
                <a :href="image"> 

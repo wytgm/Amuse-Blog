@@ -72,26 +72,22 @@ export default  {
     });
 
     // 计算json文件中的数据数量
-    fetch('~/assets/json/meitu.json')
-      .then(response => response.json())
-      .then(data => {
-        const count = data.length;
-        document.getElementById('count').textContent = `༺ 共收集 ${count} 张美图 ༻`;
-      })
-      .catch(error => {
-        console.error('发生错误：', error);
-        document.getElementById('count').textContent = '加载数据时发生错误。';
-      });
+      // fetch('~/assets/json/meitu.json')
+      // .then(response => response.json())
+      // .then(data => {
+      //   const count = data.length;
+      //   document.getElementById('count').textContent = `༺ 共收集 ${count} 张美图 ༻`;
+      // })
+      // .catch(error => {
+      //   console.error('发生错误：', error);
+      //   document.getElementById('count').textContent = '加载数据时发生错误。';
+      // });
   });
 },
 }
 </script>
 
-<style>
-body{
-  /* background: url(http://cdn.sonderwyt.top/amuseblogsucai/BG1.webp); */
-  font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
-}
+<style scoped>
 .center{
 position: absolute;
 top: 50%;
@@ -99,14 +95,12 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 .bg1{
-
   background-color: rgb(255, 54, 191);
   border-radius: 25px;
   border-width: 10px;
   border-color: rgb(161, 3, 111);
 }
 .bg2{
-
   background: repeating-linear-gradient(80deg,
   #ffbb29 0 2px,
   #ffed65 3px 4px,
@@ -126,15 +120,13 @@ transform: translate(-50%,-50%);
   inset: 0px;
   scale: 1.2;
 }
-.card {
-  width:100%; /* 确保卡片宽度适应父容器 */
+/* .cardcus {
+  width:100%;
   height:fit-content;
-  font-family:"comic" ;
   overflow: hidden;
-  border-width: 3px;
   padding: 0.25em;
-  border-color: black;
-}
+
+} */
 .data{
   position: relative;
   top: 3%;
