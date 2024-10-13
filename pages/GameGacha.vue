@@ -5,7 +5,7 @@
   <div class="container mx-auto">
     <div class="bg1"></div>
     <div class="bg2">
-    <div id="staril" class="grid grid-cols-3 p-3 gap-6">
+    <div id="staril" class="gridcus">
      <!-- 卡片 -->
      <div class="card"  v-for="(gacha, index) in gachas" :key="index">
       <div class="version" ></div>
@@ -32,7 +32,7 @@
     </div>
      <!-- 卡片按钮弹窗：对话框列表 -->
      <dialog id="myModal" class="modal">
-      <div class="modal-box w-10/12" v-if="currentGacha" style="overflow: auto;">
+      <div class="modal-box lg:w-10/12 md:w-9/12" v-if="currentGacha" style="overflow: auto;">
         <h3 class="modaltext">{{ currentGacha.people }} 卡池记录!</h3>
         <div style="margin-top: 3%;" class="font">{{ currentGacha.content }}</div>
         <div style="margin-top: 2%;scale: 0.95;">
@@ -123,25 +123,51 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 .bg1{
-  @apply w-11/12 h-[720px] center absolute;
+  @apply w-11/12 
+  lg:h-[720px]
+  md:h-[980px]
+  md:w-[94.5%] 
+  lg:rounded-3xl
+  md:rounded-none
+  center 
+  absolute;
   background-color: rgb(157, 127, 255);
-  border-radius: 25px;
+  /* border-radius: 25px; */
   border-width: 10px;
   border-color: black;  
 }
 .bg2{
-  @apply w-9/12 h-[650px] center absolute;
+  @apply 
+  lg:w-9/12 
+  sm:w-10/12 
+  lg:h-[650px] 
+  md:h-[910px] 
+  center 
+  absolute;
   background: repeating-linear-gradient(80deg,#ad28ff 0 2px,#c362ff 3px 4px,#a31df7 5px);
   border-radius: 25px;
   border-width: 5px;
   border-color: black;
   overflow: auto;
 }
+.gridcus{
+ @apply 
+ grid 
+ lg:grid-cols-3 
+ md:grid-cols-2
+ sm:grid-cols-1 
+ lg:p-3 
+ md:p-3
+ lg:gap-6
+ md:gap-4
+}
 .card {
-  @apply center;
-  position: relative;
-  width: 385px;
-  height: 295px;
+  @apply 
+  center
+  lg:w-[385px]
+  lg:h-[295px]
+  md:w-[300px]
+  md:h-[300px];
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 10px 5px 5px rgba(14, 28, 69, 0.5);
@@ -243,7 +269,32 @@ transform: translate(-50%,-50%);
   border-width: 10px;
   border-color: black;
 }
+@media (max-width: 960px) {
+.rect1{
+  display: none;
+}
+.rect2{
+  display: none;
+}
+.round1{
+  display: none;
+}
+.round2{
+  display: none;
+}
+.imgcard{
+  z-index: 3;
+  width: 285px;
+  height: 200px;
+}
+.buttoncus{
+  scale: 0.65;
+  margin-left: 45px;
 
+}
+
+
+}
 
 
 

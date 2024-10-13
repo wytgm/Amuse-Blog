@@ -93,8 +93,8 @@
   </div>
 
   <div class="flex flex-row w-11/12 h-[700px] absolute center space-x-2 " >
-    <div id="test" class="flex w-[450px] h-full rounded-lg ">
-      <Music/>
+    <div id="test" class="flex w-[450px] h-full rounded-lg bg-base-100">
+     
     </div>
     <div class="flex w-full h-full">
         <GridLayout class="z-20 p-3 bg" />
@@ -110,6 +110,7 @@
 <script>
 import { onMounted } from 'vue';
 import gsap from 'gsap';
+
 
 export default {
   name: "home",

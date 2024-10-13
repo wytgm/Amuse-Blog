@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full overflow-hidden wrap cursorcus">
     <div id="pc" :class="['grid', 'grid-cols-5', 'grid-rows-5','gap-3', 'p-3', 'w-full', 'h-full', { hidden: isPhone }]">
-      <NuxtLink role="button" 
+      <NuxtLink 
                 style="background-color: #5CA9C5; 
                       border-color:black;border-width: 2px; border-style: double;
                       box-shadow: 15px -5px 0px 2px #000;" 
@@ -9,7 +9,7 @@
                 to="/Movie">  
         <h1>collection</h1>
       </NuxtLink>
-      <NuxtLink role="button" class="btn btn-ghost w-full h-full col-start-1 col-end-3" to="/chat">  
+      <NuxtLink class="btn btn-ghost w-full h-full col-start-1 col-end-3" to="/chat">  
       <div class="chatbg  col-start-1 col-end-3 item-center">
         <div style="color:#AA3D58;font-size: 65px;">chat</div>
       </div>

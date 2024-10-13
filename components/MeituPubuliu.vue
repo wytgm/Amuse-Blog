@@ -1,43 +1,33 @@
 <template>
   <div class="container mx-auto w-full h-full absolute top-2 left-2">
-    <Waterfall 
-    id="gallery"
-    backgroundColor="rgba(255,255,255,0)"
-    :list="list" 
-    :breakpoints="breakpoints" 
-    :gutter="8">
-      <template #default="{url}">
-        <div class="card">
-          <a :href="url">
-          <LazyImg class="imgcus" :url="url" />
-          </a>
-        </div>
-      </template>
-    </Waterfall>
-    
+    <no-ssr>
+      <Waterfall 
+      backgroundColor="rgba(255,255,255,0)"
+      :list="list" 
+      :breakpoints="breakpoints" 
+      :gutter="8">
+        <template #default="{url}">
+          <div class="card">
+            <a :href="url">
+            <LazyImg class="imgcus" :url="url" />
+            </a>
+          </div>
+        </template>
+      </Waterfall>
+    </no-ssr>
   </div>
 </template>
 
 <script>
+import NoSSR from 'vue-no-ssr';
 import { onMounted, ref } from 'vue';
 import { LazyImg, Waterfall } from 'vue-waterfall-plugin-next'
 import 'vue-waterfall-plugin-next/dist/style.css'
 import list from "~/assets/json/meitu.json"
 
-import lightGallery from 'lightgallery';
-import 'lightgallery/css/lightgallery.css'
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-import 'lightgallery/css/lg-autoplay.css';
-import 'lightgallery/css/lg-fullscreen.css';
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgAutoplay from 'lightgallery/plugins/autoplay';
-import lgFullscreen from 'lightgallery/plugins/fullscreen';
-
 export default {
   name:"Meitu",
-  components: { LazyImg, Waterfall }, // 组件列表
+  components: { LazyImg, Waterfall,NoSSR, }, //组件列表
   data() {
     return {
       list:list,
@@ -59,14 +49,7 @@ export default {
   },
   setup() {
   onMounted(() => {
-    // 灯箱图片放大插件
-    lightGallery(document.getElementById('gallery'), {
-      selector: 'a',
-      mode: 'lg-fade',
-      speed: 1000,
-      download: false,
-      plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen],
-    });
+
   });
 },
 };

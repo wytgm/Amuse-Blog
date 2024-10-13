@@ -1,6 +1,5 @@
 <template>
   <div>
-    <topmeitu/>
     <div class="-z-1 center  w-full h-full overflow-hidden">
       <video class="center scale-125" muted autoplay loop>
         <source src="/BG.mp4" type="video/mp4">
@@ -8,7 +7,9 @@
     </div>  
     <div class="container mx-auto w-[96%] h-[720px] center bg1">
       <div class="w-[83%] h-[660px] center bg2">
-        <MeituPubuliu />
+        
+          <waterfall class="p-4" />
+        
       </div>
     </div>
   </div>
@@ -17,24 +18,11 @@
 <script> 
 import { onMounted, ref } from 'vue';
 import meitus from '~/assets/json/meitu.json';
-import lightGallery from 'lightgallery';
-import 'lightgallery/css/lightgallery.css'
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-import 'lightgallery/css/lg-autoplay.css';
-import 'lightgallery/css/lg-fullscreen.css';
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgAutoplay from 'lightgallery/plugins/autoplay';
-import lgFullscreen from 'lightgallery/plugins/fullscreen';
-import { LazyImg, Waterfall } from 'vue-waterfall-plugin-next'
-import 'vue-waterfall-plugin-next/dist/style.css'
-import MeituPubuliu from '../components/MeituPubuliu.vue';
 
 export default  {
   name:"Gamebeauty",
-  components:{
-    LazyImg,Waterfall,MeituPubuliu
+  mounted() {
+    this.isClient = true;
   },
   setup() {
   const list = ref([]); // 使用 ref 初始化 list
@@ -61,27 +49,6 @@ export default  {
     } else {
       console.log('List is empty, no images to render.');
     }
-
-    // 灯箱图片放大插件
-    lightGallery(document.getElementById('gallery'), {
-      selector: 'a',
-      mode: 'lg-fade',
-      speed: 1000,
-      download: false,
-      plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen],
-    });
-
-    // 计算json文件中的数据数量
-      // fetch('~/assets/json/meitu.json')
-      // .then(response => response.json())
-      // .then(data => {
-      //   const count = data.length;
-      //   document.getElementById('count').textContent = `༺ 共收集 ${count} 张美图 ༻`;
-      // })
-      // .catch(error => {
-      //   console.error('发生错误：', error);
-      //   document.getElementById('count').textContent = '加载数据时发生错误。';
-      // });
   });
 },
 }
@@ -119,21 +86,5 @@ transform: translate(-50%,-50%);
   object-fit: cover;
   inset: 0px;
   scale: 1.2;
-}
-/* .cardcus {
-  width:100%;
-  height:fit-content;
-  overflow: hidden;
-  padding: 0.25em;
-
-} */
-.data{
-  position: relative;
-  top: 3%;
-  left: -40%;
-  font-size:x-large;
-  font-weight: 800;
-  color: aliceblue;
-  text-align: center;
 }
 </style>

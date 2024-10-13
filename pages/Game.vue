@@ -1,6 +1,7 @@
 <template>
   <div>
     <topcollect/>
+    <div class="-z-1 center  w-full h-full overflow-hidden absolute bgame"></div>  
     <div class="whole">
       <div class="bottomrectG">
         <div class="grid grid-cols-3 gap-2 gridcus">
@@ -89,13 +90,20 @@ export default {
   left: 50%;
   transform: translate(-50%,-50%);
 }
+.bgame{
+  --c: #77ff00;
+	background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 0.5%),
+	            repeating-linear-gradient(-30deg,var(--c), #3c3c3c, var(--c) 0.5%),
+	            linear-gradient(45deg,#000000,var(--c));
+	background-blend-mode: color-dodge;
+	filter: contrast(5);
+}
 .whole{
   @apply 
   container 
   mx-auto 
   w-full h-full  
-  center
-  bg-rose-500;
+  center;
  
   font-family: 'Uranus_Pixel_11Px', 'Uranus Pixel 11Px';
 }
@@ -105,17 +113,12 @@ export default {
   w-full 
   relative 
   center 
-  p-3
+  lg:p-3
+  md:p-8
   overflow-scroll 
-  overflow-x-hidden;
-  height: 700px;
-  --c: #77ff00;
-	background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 0.5%),
-	            repeating-linear-gradient(-30deg,var(--c), #3c3c3c, var(--c) 0.5%),
-	            linear-gradient(45deg,#000000,var(--c));
-	background-blend-mode: color-dodge;
-	filter: contrast(1.15);
-  box-shadow: 0px 0px 0px 3px rgb(255, 255, 255,0.8);  
+  overflow-x-hidden
+  lg:h-[700px]
+  md:h-[1024px];
 }
 .gridcus{
   @apply grid 
@@ -123,7 +126,8 @@ export default {
   md:grid-cols-2 
   lg:grid-cols-3 
   xl:grid-cols-3 
-  gap-2  
+  lg:gap-2 
+  md:gap-5 
   overflow-scroll 
   overflow-x-hidden 
   items-center
@@ -139,9 +143,8 @@ export default {
   lg:h-[266px]
   md:w-[345px]
   md:h-[266px]
-  sm:w-[290px]
+  sm:w-[315px]
   sm:h-[266px]
-  
   ;
   position: relative;
   border-top-right-radius: 45px;
@@ -205,7 +208,6 @@ p{
   right:  3%;
   color: #202020;
   font-size:larger;
-
   --c: #ff8400;
 	background: repeating-linear-gradient(45deg,var(--c),#000000,var(--c) 3%),
 	            repeating-linear-gradient(-30deg,var(--c), #3c3c3c, var(--c) 3%),
@@ -216,8 +218,6 @@ p{
   border-width: 4px;
   border-color: #000;
   border-radius: 25px;
-  /* background-color: #f7941d;
-  outline-color: #f7941d; */
   scale: 0.85;
 }
 .clobutton{
@@ -233,14 +233,15 @@ p{
   font-weight: 900;
   margin-top: 10px;
 }
-
-.data{
-  z-index: 6;
-  font-size: small;
-  font-weight: 800;
-  color: aliceblue;
-  position: absolute;
-  top: 6%;
-  right: 24%;
+@media (max-width: 960px) {
+  .title{
+  width: 100%;
+  height: 50px;
+  position:absolute; 
+  top:0px;
+  left:0px;
+  font-size:smaller;
 }
+}
+
 </style>
